@@ -9,7 +9,7 @@ const Stats = () => {
             md:flex 
             md:flex-row 
             md:mt-14 
-            md:gap-x-32 
+            md:gap-x-20 
             md:ml-20 
             lg:mt-20 
             lg:gap-x-36 
