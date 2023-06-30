@@ -1,6 +1,31 @@
+'use client'
+
 import Image from "next/image"
+import getUserDetails from "../hooks/getUserDetails"
+import { useState, useEffect } from "react";
+
+interface UserProps {
+    activityMessage: string | null
+    displayName: string | null
+}
 
 const Profile = () => {
+    const [user, setUser] = useState<UserProps>({ activityMessage: null, displayName: null });
+
+    useEffect(() => {
+      const fetchUserDetails = async () => {
+        try {
+          const userDetails = await getUserDetails("swapn652");
+          setUser(userDetails);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+  
+      fetchUserDetails();
+    }, []);
+  
+    console.log(user?.activityMessage, user?.displayName);
     return (
         <div className="flex flex-col">
             <div>
@@ -36,11 +61,11 @@ const Profile = () => {
 
                     <div className="z-10 relative"> 
                         <div className="mt-[12.5em] md:mt-[8.3em] text-2xl md:text-4xl">
-                            Swapnil Pant
+                            {user?.displayName}
                         </div>
 
                         <div className="text-xl md:text-2xl text-gray-600">
-                            Hustler
+                            {user?.activityMessage}
                         </div>
                     </div>
                 
