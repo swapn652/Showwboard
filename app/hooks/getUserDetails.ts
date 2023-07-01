@@ -6,11 +6,11 @@ const getUserDetails = async (name : string) => {
     // console.log(response.data);
     return {
       activityMessage: response.data.activity.message,
-      displayName: response.data.displayName
+      displayName: response.data.displayName,
+      profilePictureKey: response.data.profilePictureKey
     };
   } catch (error) {
-    console.log(error);
-    throw error; // optional: rethrow the error to handle it outside the hook
+    console.log(error)
   }
 };
 

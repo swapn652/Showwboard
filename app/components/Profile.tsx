@@ -7,15 +7,16 @@ import { useState, useEffect } from "react";
 interface UserProps {
     activityMessage: string | null
     displayName: string | null
+    profilePictureKey: string | null
 }
 
 const Profile = () => {
-    const [user, setUser] = useState<UserProps>({ activityMessage: null, displayName: null });
+    const [user, setUser] = useState<UserProps | undefined>({ activityMessage: null, displayName: null, profilePictureKey: null });
 
     useEffect(() => {
       const fetchUserDetails = async () => {
         try {
-          const userDetails = await getUserDetails("swapn652");
+          const userDetails = await getUserDetails("tianrongliew");
           setUser(userDetails);
         } catch (error) {
           console.log(error);
@@ -36,7 +37,7 @@ const Profile = () => {
                     w-full
                     ">
                     <Image 
-                        src="/test/banner.png" 
+                        src='/test/banner.png'
                         width="200" height="200" 
                         alt="Banner" 
                         className="w-full h-[300px]" 
@@ -52,7 +53,7 @@ const Profile = () => {
                         ">
                         <Image 
                             alt="user image" 
-                            src="/test/leomord.png" 
+                            src={ user?.profilePictureKey || '/test/leomord.png' }
                             width="100" 
                             height="100" 
                             className="w-40 h-40 rounded-full"
