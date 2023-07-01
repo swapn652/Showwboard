@@ -2,7 +2,19 @@ import { FaEye } from 'react-icons/fa'
 import { AiFillHeart } from 'react-icons/ai'
 import { BiSolidUpvote } from 'react-icons/bi'
 
-const Thread = () => {
+interface ThreadProps {
+    message: string
+    views: number
+    likes: number
+    upvotes: number
+}
+
+const Thread: React.FC<ThreadProps> = ({
+    message,
+    views,
+    likes,
+    upvotes
+}) => {
     return (
         <div className="
             flex 
@@ -15,7 +27,7 @@ const Thread = () => {
             lg:h-[250px] 
             xl:w-[500px] 
             xl:h-[280px] 
-            bg-gray-300 
+            bg-gray-400 
             border-4 
             border-black 
             rounded-md"
@@ -26,6 +38,7 @@ const Thread = () => {
                 flex 
                 mx-auto 
                 mt-10 
+                h-[350px]
                 w-[220px] 
                 md:w-[425px] 
                 lg:w-[320px] 
@@ -34,7 +47,12 @@ const Thread = () => {
                 p-2 
                 rounded-md"
             >
-                    This is the thread mnm nm nmna sdasdad sdsf
+                <div className='
+                    overflow-hidden
+                    pd-2'
+                >
+                    { message.slice(0, 100) }...
+                </div>
             </div>
                 <div className="
                     flex 
@@ -67,7 +85,7 @@ const Thread = () => {
                             ml-2 
                             xl:text-2xl'
                         >
-                            1000
+                            { views }
                         </div>
                     </div>
                     <div className='flex flex-row'>
@@ -86,7 +104,7 @@ const Thread = () => {
                             ml-2 
                             xl:text-2xl'
                         >
-                            1000
+                           { likes }
                         </div>
                     </div>
                     <div className='flex flex-row'>
@@ -104,7 +122,7 @@ const Thread = () => {
                             xl:mt-2 
                             xl:text-2xl'
                         >
-                            1000
+                            { upvotes }
                         </div>
                     </div>
                 </div>

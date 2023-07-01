@@ -13,7 +13,6 @@ const Stats = () => {
         const fetchThreadStats = async () => {
             const threadStats = await getThreadsStats('tianrongliew')
             setThreadStats(threadStats)
-            console.log(threadStats)
         }
         
         const fetchShowStats = async () => {

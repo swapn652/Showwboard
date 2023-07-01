@@ -25,8 +25,7 @@ const Profile = () => {
   
       fetchUserDetails();
     }, []);
-  
-    console.log(user?.activityMessage, user?.displayName);
+    
     return (
         <div className="flex flex-col">
             <div>
