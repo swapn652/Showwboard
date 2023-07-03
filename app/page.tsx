@@ -1,6 +1,7 @@
 import Followers from './components/Followers'
 import Following from './components/Following'
 import Profile from './components/Profile'
+import Search from './components/Search'
 import Show from './components/Show'
 import Shows from './components/Shows'
 import Stats from './components/Stats'
@@ -11,7 +12,7 @@ import User from './components/User'
 export default function Home() {
   return (
     <>
-      <Profile/>
+      {/* <Profile/>
       <Stats/>
       <hr className='h-[10px] border-[6px] border-black mt-20'/>
       <Followers/>
@@ -19,7 +20,8 @@ export default function Home() {
       <hr className='h-[10px] border-[6px] border-black mt-20'/>
       <Threads/>
       <hr className='h-[10px] border-[6px] border-black mt-20'/>
-      <Shows/>
+      <Shows/> */}
+      <Search/>
     </>
   )
 }
