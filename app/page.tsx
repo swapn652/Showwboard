@@ -2,6 +2,7 @@ import Followers from './components/Followers'
 import Following from './components/Following'
 import Profile from './components/Profile'
 import Show from './components/Show'
+import Shows from './components/Shows'
 import Stats from './components/Stats'
 import Thread from './components/Thread'
 import Threads from './components/Threads'
@@ -18,7 +19,7 @@ export default function Home() {
       <hr className='h-[10px] border-[6px] border-black mt-20'/>
       <Threads/>
       <hr className='h-[10px] border-[6px] border-black mt-20'/>
-      <Show/>
+      <Shows/>
     </>
   )
 }

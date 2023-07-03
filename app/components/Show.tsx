@@ -2,7 +2,21 @@ import Image from "next/image"
 import { AiFillHeart } from "react-icons/ai"
 import { FaEye } from "react-icons/fa"
 
-const Show =  () => {
+interface ShowProp {
+    bannerImgUrl: string
+    views: number
+    likes: number
+    showUrl: string
+}
+
+const Show: React.FC<ShowProp> =  (
+    {
+        bannerImgUrl,
+        views,
+        likes,
+        showUrl
+    }
+) => {
     return (
         <div className='
             w-[300px] 
@@ -20,7 +34,7 @@ const Show =  () => {
         >
             <div className="flex flex-col">
                 <Image 
-                    src="/test/leomord.png" 
+                    src={ bannerImgUrl || "/test/banner.png" }
                     alt="user" 
                     height={100} 
                     width={100} 
@@ -69,7 +83,7 @@ const Show =  () => {
                             xl:text-2xl 
                             lg:text-lg"
                         >
-                            1000
+                            { views }
                         </div>
                     </div>
                     <div className="flex flex-row">
@@ -91,7 +105,7 @@ const Show =  () => {
                             xl:text-2xl 
                             lg:text-lg"
                         >
-                            1000
+                            { likes }
                         </div>
                     </div>
                 </div>
@@ -114,6 +128,9 @@ const Show =  () => {
                     border-black 
                     rounded-md"
                 >
+                    <a href={ showUrl } className="p-2 xl:text-xl" target="_blank">
+                    { showUrl.slice(0, 30) }...
+                    </a>
                 </div>
             </div>
         </div>

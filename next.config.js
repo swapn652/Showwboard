@@ -2,7 +2,9 @@
 const nextConfig = {
     images: {
         domains: [
-            "profile-assets.showwcase.com"
+            "profile-assets.showwcase.com",
+            "project-assets.showwcase.com",
+            "assets.showwcase.com"
         ]
     }
 }
