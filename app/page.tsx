@@ -1,5 +1,6 @@
 import Followers from './components/Followers'
 import Following from './components/Following'
+import Footer from './components/Footer'
 import Profile from './components/Profile'
 import Search from './components/Search'
 import Show from './components/Show'
@@ -11,17 +12,11 @@ import User from './components/User'
 
 export default function Home() {
   return (
-    <>
-      {/* <Profile/>
-      <Stats/>
-      <hr className='h-[10px] border-[6px] border-black mt-20'/>
-      <Followers/>
-      <Following/>
-      <hr className='h-[10px] border-[6px] border-black mt-20'/>
-      <Threads/>
-      <hr className='h-[10px] border-[6px] border-black mt-20'/>
-      <Shows/> */}
-      <Search/>
-    </>
+    <div className="flex flex-col min-h-screen">
+      <div className="flex-grow">
+        <Search/>
+      </div>
+      <Footer/>
+    </div>
   )
 }
