@@ -4,19 +4,22 @@ import { useState, useEffect } from 'react';
 import getThreadsStats from '../hooks/getThreadsStats';
 import getShowStats from '../hooks/getShowStats';
 
+interface StatsProps {
+  username: string
+}
 
-const Stats = () => {
+const Stats = ({ username }: StatsProps) => {
     const [threadStats, setThreadStats] = useState<any>({})
     const [showStats, setShowStats] = useState<any>({})
 
     useEffect(() => {
         const fetchThreadStats = async () => {
-            const threadStats = await getThreadsStats('tianrongliew')
+            const threadStats = await getThreadsStats(username)
             setThreadStats(threadStats)
         }
         
         const fetchShowStats = async () => {
-            const showStats = await getShowStats('tianrongliew')
+            const showStats = await getShowStats(username)
             setShowStats(showStats)
         }
 

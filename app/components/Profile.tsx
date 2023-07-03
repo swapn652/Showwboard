@@ -10,13 +10,18 @@ interface UserProps {
     profilePictureKey: string | null
 }
 
-const Profile = () => {
+
+interface ProfileProps {
+    username: string;
+  }
+
+const Profile = ( {username}: ProfileProps) => {
     const [user, setUser] = useState<UserProps | undefined>({ activityMessage: null, displayName: null, profilePictureKey: null });
 
     useEffect(() => {
       const fetchUserDetails = async () => {
         try {
-          const userDetails = await getUserDetails("tianrongliew");
+          const userDetails = await getUserDetails(username);
           setUser(userDetails);
         } catch (error) {
           console.log(error);

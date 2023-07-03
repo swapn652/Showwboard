@@ -3,12 +3,16 @@ import { useState, useEffect } from "react";
 import getShows from "../hooks/getShows";
 import Show from "./Show";
 
-const Shows = () => {
+interface ShowsProps {
+  username: string
+}
+
+const Shows = ({ username }: ShowsProps) => {
     const [showsList, setShowsList] = useState<any[]>([]);
 
     useEffect(() => {
       const fetchshows = async () => {
-        const shows = await getShows('tianrongliew');
+        const shows = await getShows(username);
         console.log(shows);
         setShowsList(shows);
         console.log(showsList);

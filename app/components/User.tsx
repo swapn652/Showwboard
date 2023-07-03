@@ -9,9 +9,13 @@ interface UserProps {
 
 const User: React.FC<UserProps> = ({name, imgUrl}) => {
     const reduceName = (name: string) => {
-        const [firstName, middleName] = name.split(" ", 2);
-        const firstAndMiddleName = `${firstName} ${middleName}`;
-        return firstAndMiddleName
+        if(name.split(" ").length>2){
+            const [firstName, middleName] = name.split(" ", 2);
+            const firstAndMiddleName = `${firstName} ${middleName}`;
+            return firstAndMiddleName
+        }
+
+        return name
     }
 
     return (

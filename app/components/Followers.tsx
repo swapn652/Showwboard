@@ -4,13 +4,17 @@ import React, { useState, useEffect } from "react";
 import User from "./User";
 import getFollowers from "../hooks/getFollowers";
 
-const Followers = () => {
+interface FollowersProps {
+  username: string
+}
+
+const Followers = ({ username }: FollowersProps) => {
   const [followerDetails, setFollowerDetails] = useState<any[]>([]);
 
   useEffect(() => {
     const fetchFollowers = async () => {
       try {
-        const followers = await getFollowers('tianrongliew');
+        const followers = await getFollowers(username);
         setFollowerDetails(followers);
       } catch (error) {
         console.log(error);

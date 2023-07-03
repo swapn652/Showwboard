@@ -4,12 +4,16 @@ import { useState, useEffect } from "react";
 import getThreads from "../hooks/getThreads";
 import Thread from "./Thread";
 
-const Threads = () => {
+interface ThreadsProps {
+  username: string
+}
+
+const Threads = ({ username }: ThreadsProps) => {
   const [threadsList, setThreadsList] = useState<any[]>([]);
 
   useEffect(() => {
     const fetchThreads = async () => {
-      const threads = await getThreads('tianrongliew');
+      const threads = await getThreads(username);
       console.log(threads);
       setThreadsList(threads);
       console.log(threadsList);
