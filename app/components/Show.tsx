@@ -128,9 +128,11 @@ const Show: React.FC<ShowProp> =  (
                     border-black 
                     rounded-md"
                 >
-                    <a href={ showUrl } className="p-2 xl:text-xl" target="_blank">
-                    { showUrl.slice(0, 30) }...
-                    </a>
+                    <div className="flex justify-content flex-wrap">
+                        <a href={ showUrl } className="text-xs p-2 :text-xl md:text-xl md:p-2 lg:p-1 lg:text-sm xl:p-2" target="_blank">
+                        { showUrl.slice(0, 30) }...
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
