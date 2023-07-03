@@ -43,16 +43,16 @@ const Stats = () => {
     >
       <div className="flex flex-row">
         <div className="
-          text-3xl 
+          text-2xl 
           mt-8 
-          md:text-3xl 
+          md:text-xl 
           md:mt-8 
-          lg:text-4xl 
+          lg:text-2xl 
           lg:mt-12 
-          xl:text-5xl 
+          xl:text-3xl 
           xl:mt-12"
         >
-          THREADS
+          RECENT THREADS
         </div>
         <div className="
           gap-y-14 
@@ -81,16 +81,16 @@ const Stats = () => {
 
       <div className="flex flex-row">
         <div className="
-          text-3xl 
+          text-2xl 
           mt-8 
-          md:text-3xl 
+          md:text-xl 
           md:mt-8 
-          lg:text-4xl 
+          lg:text-2xl 
           lg:mt-12 
-          xl:text-5xl 
+          xl:text-3xl 
           xl:mt-12"
         >
-          SHOWS
+          RECENT SHOWS
         </div>
         <div className="
           gap-y-14 
