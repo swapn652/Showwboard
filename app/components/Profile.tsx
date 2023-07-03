@@ -57,7 +57,7 @@ const Profile = ( {username}: ProfileProps) => {
                         ">
                         <Image 
                             alt="user image" 
-                            src={ user?.profilePictureKey || '/test/leomord.png' }
+                            src={ user?.profilePictureKey || '/test/placeholder.png' }
                             width="100" 
                             height="100" 
                             className="w-40 h-40 rounded-full"
